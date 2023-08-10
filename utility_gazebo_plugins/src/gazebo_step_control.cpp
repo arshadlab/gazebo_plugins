@@ -136,7 +136,7 @@ void GazeboStepControl::OpenSharedMemory(void)
 void GazeboStepControl::CloseSharedMemory(void)
 {
     if (m_map != NULL) {
-      int res = munmap(m_map, SHARED_MEMORY_SIZE);
+      munmap(m_map, SHARED_MEMORY_SIZE);
       m_fd = shm_unlink(STORAGE_ID);
     }
 
